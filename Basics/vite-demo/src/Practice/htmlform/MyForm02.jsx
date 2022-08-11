@@ -36,8 +36,8 @@ function MyForm02() {
         <p>My name is {fName} {lName} </p>
         <div>
             <p>Counter: {counter}</p>
-            <button onClick={(e)=>_increment(e)} >+</button>
-            <button onClick={(e)=>_decrement(e)} >-</button>
+            <button onClick={_increment} >+</button>
+            <button onClick={_decrement} >-</button>
             </div>
 
         </>
@@ -45,14 +45,14 @@ function MyForm02() {
 
 }
 
-function increment(e,counter){
-    e.preventDefault();
-    counter=counter+1;
-}
+// function increment(e,counter){
+//     e.preventDefault();
+//     counter=counter+1;
+// }
 
-function decrement(e,counter){
-    e.preventDefault();
-   counter=counter-1;
-}
+// function decrement(e,counter){
+//     e.preventDefault();
+//    counter=counter-1;
+// }
 
 export default MyForm02;

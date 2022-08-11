@@ -4,9 +4,25 @@ import { Form, Row, Col, Input, FormGroup, Label, Button} from 'reactstrap';
 function MyCalc() {
     const [num1,setNum1]=useState(0);
     const [num2,setNum2]=useState(0);
-    const [operator, setOperator] = useState();
+    const [operator, setOperator] = useState('');
 
-    const result = (num1,num2,cb)=> cb(num1,num2);
+    const _oper = {
+        plus:(a,b)=>a+b,
+        minus:(a,b)=>a-b,
+        multiply:(a,b)=>a*b,
+        divide:(a,b)=>a/b,
+        mod:(a,b)=>a%b,
+    }
+
+
+    const result = (num1,num2,cb)=> {
+        console.log("Num1:",num1);
+        console.log("Num2:",num2);
+        console.log("cb:",cb)
+        return cb(num1,num2)
+    }
+
+    
     
     const plus = (a,b) => a+b;
     const minus = (a,b)=>a-b;
@@ -31,7 +47,10 @@ function MyCalc() {
                 <Col md={2}>
                     <FormGroup>
                         <Label for="operation">Operation</Label>
-                        <Input id="operation" name="select"  type="select" value={operator} onSelect={(e)=>setOperator(e.target.option)} >
+                        <Input id="operation" name="select"  type="select" value={operator} onChange={(e)=>{setOperator(e.target.value)
+                        console.log(e.target.option)
+                        }} >
+                            
                             <option value="Select">Select</option>
                             <option value="plus">+</option>
                             <option value="minus">-</option>

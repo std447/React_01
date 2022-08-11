@@ -1,3 +1,8 @@
+# Custom/personal
+**/.drawio
+*.drawio
+
+
 # Logs
 logs
 *.log
@@ -22,3 +27,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
