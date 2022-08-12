@@ -26,7 +26,9 @@ export default function UserProfile() {
 
   const container = {
     display:"flex",
-    flexFlow:"column wrap",
+    flexFlow:"row wrap",
+    gap:"20px",
+    margin:"20px"
   }
 
   return(
@@ -42,7 +44,7 @@ export default function UserProfile() {
 
         return (
           <Fragment key={id}>
-          <Card style={{width:"18rem"}}>
+          <Card style={{width:"16rem"}}>
           <CardBody>
             <CardText>{username}</CardText>
             <CardTitle tag="h5">{name}</CardTitle>

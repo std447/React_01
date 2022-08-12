@@ -12,7 +12,7 @@ export default function LikeButton() {
 
   const handleFavorate = () =>{
     console.log("Fav",fav)
-    if(label==="UnFav"){
+    if(label!="Fav"){
       setfav(prevValues=>{return {...prevValues,label:"Fav",color:"success"}})}
       else{
         setfav(prevValues=>{return {...prevValues,label:"UnFav",color:"danger"}})}
