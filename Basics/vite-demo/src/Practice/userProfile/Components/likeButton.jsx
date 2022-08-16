@@ -11,7 +11,6 @@ export default function LikeButton() {
   const {label,color} = fav;
 
   const handleFavorate = () =>{
-    console.log("Fav",fav)
     if(label!="Fav"){
       setfav(prevValues=>{return {...prevValues,label:"Fav",color:"success"}})}
       else{
@@ -22,7 +21,7 @@ export default function LikeButton() {
   return(
     <>
     
-    <Button color={color} onClick={handleFavorate}>{label}</Button>
+    <Button style={{maxWidth:"100px"}}color={color} onClick={handleFavorate}>{label}</Button>
     
 
     </>
