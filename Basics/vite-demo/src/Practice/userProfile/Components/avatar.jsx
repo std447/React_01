@@ -1,4 +1,4 @@
-export default function MyAvatar({ className, src, alt = "Alt text" }) {
+export default function MyAvatar({  src, alt = "Alt text" }) {
   const avatar = {
     height: "100px",
     width: "100px",
@@ -17,8 +17,8 @@ export default function MyAvatar({ className, src, alt = "Alt text" }) {
 
   return (
     <>
-      <div className={className} style={avatar}>
-        <img src={src} alt={alt} />
+      <div style={avatar}>
+        <img src={src} alt={alt} style={imgStyle} />
       </div>
     </>
   );

@@ -1,42 +1,44 @@
 import { useState, useEffect, Fragment } from "react";
 import axios from "axios";
-import { Card, CardBody, CardText, CardTitle, Input, Row } from "reactstrap";
+import { Card, CardBody, CardImg, CardText, CardTitle, Input, Row } from "reactstrap";
 
 import MyAvatar from "./Components/avatar";
 import LikeButton from "./Components/likeButton";
 import SearchBar from "./Components/Search";
+import LikeButton2 from "./Components/likeButton2";
 
 const baseUrl = "https://jsonplaceholder.typicode.com/users";
 
 export default function UserProfile() {
   const [users, setUsers] = useState([]);
   const [search,setSearch] = useState("");
+  const[searchList,setSearchList]=useState([]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${baseUrl}`)
-  //     .then((response) => {console.log(response.data);setUsers(response.data)})
-  //     .catch((err) => console.log("Error: ", err));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`${baseUrl}`)
+      .then((response) => {console.log(response.data);setUsers(response.data);setSearchList(response.data)})
+      .catch((err) => console.log("Error: ", err));
+  }, []);
 
 // If 
+
+
   useEffect(()=>{
     console.log("Search",search)
-    if(search.length==0) {
-      axios
-      .get(`${baseUrl}`)
-      .then((response) => {console.log(response.data);setUsers(response.data)})
-      .catch((err) => console.log("Error: ", err));
-      return}
+    // if(search.length==0) {
+      // axios
+      // .get(`${baseUrl}`)
+      // .then((response) => {console.log(response.data);setUsers(response.data);setSearchList(response.data)})
+      // .catch((err) => console.log("Error: ", err));
+      // return}
 
-    const filteredList = users.filter((user)=>{
+    const filteredList = searchList.filter((user)=>{
       const {name} = user;
       return name.toUpperCase().includes(search.toUpperCase())
       })
 
-      
-
-      setUsers((!search)?users:filteredList)
+      setUsers(filteredList)
 
   },[search])
 
@@ -67,13 +69,13 @@ export default function UserProfile() {
             <Fragment key={id}>
              
               <Card style={{ width: "50%" }}>
+                <CardImg></CardImg>
                 <CardBody>
                   <CardText>{username}</CardText>
                   <CardTitle tag="h5">{name}</CardTitle>
                 </CardBody>
-                <LikeButton />
+                <LikeButton2 />
               </Card>
-              {/* <div key={(id+Math.random()).toString(6)}>User: {username} is {name}</div> */}
             </Fragment>
           );
         })}

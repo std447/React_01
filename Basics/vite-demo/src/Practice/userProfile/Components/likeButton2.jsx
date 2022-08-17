@@ -1,8 +1,8 @@
 import { Button } from "reactstrap"
-import { useState } from "react"
+import { useState, memo } from "react"
 
 
-export default function LikeButton() {
+function LikeButton2() {
   const [fav,setfav] = useState({
     label:"Unfav",
     color:"danger"
@@ -27,3 +27,5 @@ export default function LikeButton() {
     </>
   )
 }
+
+export default memo(LikeButton2)
