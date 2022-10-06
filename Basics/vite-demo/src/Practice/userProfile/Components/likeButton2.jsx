@@ -10,6 +10,8 @@ function LikeButton2() {
   console.log("LikeButton")
   const {label,color} = fav;
 
+  
+
   const handleFavorate = () =>{
     if(label!="Fav"){
       setfav(prevValues=>{return {...prevValues,label:"Fav",color:"success"}})}

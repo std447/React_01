@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App'
 import './index.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import PracticeContext from './Practice/Context/Practice/index_01';
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  
-   <PracticeContext />
- 
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 )

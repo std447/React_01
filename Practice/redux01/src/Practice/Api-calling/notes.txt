@@ -1,0 +1,29 @@
+# Component - button - get data
+              - useDispatch - trigger action
+            - useSelector:- Retrive Data
+            - Display Data
+
+# Data should be central ( use redux,redux toolkit )
+
+# Slice - Name
+        - State:- initial state
+        - Reducers
+          - Actions:- request, success, fail
+
+# Saga  - will listen request via watcher | method for API call
+        - Watcher
+        - Listener
+        - API Logic
+          - Success
+            - Stop spinner
+            - Display Data
+          - Fail
+            - Stop Spinner
+            - Display Error Msg
+
+# Connect reducer to root-reducer
+# Connect saga to root-saga
+
+
+
+

@@ -1,0 +1,22 @@
+
+.tile{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: .4rem;  
+}
+
+.tilename{
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 2px;
+  text-align: center;
+}
+
+button{
+  color: red;
+  padding: 0.1rem;
+  border: 1px solid red;
+  border-radius: 2px;
+}

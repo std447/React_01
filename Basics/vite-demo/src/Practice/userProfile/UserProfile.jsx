@@ -6,6 +6,7 @@ import MyAvatar from "./Components/avatar";
 import LikeButton from "./Components/likeButton";
 import SearchBar from "./Components/Search";
 import LikeButton2 from "./Components/likeButton2";
+import { useCallback } from "react";
 
 const baseUrl = "https://jsonplaceholder.typicode.com/users";
 
@@ -42,7 +43,9 @@ export default function UserProfile() {
 
   },[search])
 
- 
+  const blankFun = useCallback(()=> {
+    
+  },[])
 
   const container = {
     display: "flex",
@@ -74,7 +77,7 @@ export default function UserProfile() {
                   <CardText>{username}</CardText>
                   <CardTitle tag="h5">{name}</CardTitle>
                 </CardBody>
-                <LikeButton2 />
+                <LikeButton2 onclick={blankFun}/>
               </Card>
             </Fragment>
           );
