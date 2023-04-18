@@ -20,6 +20,10 @@ const ApiCallComp = () => {
     <>
       <button onClick={_handleClick}>Get Data</button>
 
+      {data.map((item)=>{
+        
+      })}
+
     </>
   )
 }
